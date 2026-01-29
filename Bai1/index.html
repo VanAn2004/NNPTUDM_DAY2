@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Store</h1>
+            <nav class="nav">
+                <span>Danh Sách Sản Phẩm</span>
+            </nav>
+        </div>
+    </header>
+
+
+    <main class="container">
+        <!-- Thanh tìm kiếm và dropdown lọc -->
+        <div class="d-flex justify-content-center align-items-center gap-2 mb-4 flex-wrap">
+            <input type="text" id="searchInput" class="form-control search-bar rounded-pill flex-grow-1" style="max-width:350px;min-width:200px;" placeholder="Tìm kiếm sản phẩm..." oninput="onSearchChanged()">
+            <div class="dropdown">
+                <button class="btn btn-outline-dark dropdown-toggle rounded-pill px-4" type="button" id="dropdownSort" data-bs-toggle="dropdown" aria-expanded="false">
+                    Sắp xếp
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownSort">
+                    <li><a class="dropdown-item" href="#" onclick="sortProducts('name-asc')">Tên A-Z</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="sortProducts('name-desc')">Tên Z-A</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="sortProducts('price-asc')">Giá tăng dần</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="sortProducts('price-desc')">Giá giảm dần</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Grid sản phẩm -->
+        <div class="products-grid" id="product-list"></div>
+        <!-- Bảng quản lý sản phẩm -->
+        <div class="table-responsive mt-5">
+            <table class="table table-bordered table-hover align-middle" id="productTable">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Ảnh</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Giá</th>
+                        <th>Mô tả</th>
+                        <th>Danh mục</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Render JS -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Modern Store. All rights reserved.</p>
+    </footer>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
