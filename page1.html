@@ -9,52 +9,46 @@
 </head>
 
 <body>
-    <div>
-        <table>
-            <thead>
+    <div style="max-width: 700px; margin: 32px auto 16px auto; background: #fff; border-radius: 16px; box-shadow: 0 2px 16px rgba(0,0,0,0.08); padding: 32px;">
+        <h2 style="text-align:center; margin-bottom: 24px; color: #1a1a1a;">Quản lý Bài viết</h2>
+        <table style="width:100%; border-collapse:collapse; margin-bottom: 24px;">
+            <thead style="background:#232323; color:#fff;">
                 <tr>
-                    <th>
-                        id
-                    </th>
-                    <th>
-                        title
-                    </th>
-                    <th>
-                        views
-                    </th>
+                    <th style="padding:10px 8px;">ID</th>
+                    <th style="padding:10px 8px;">Title</th>
+                    <th style="padding:10px 8px;">View</th>
+                    <th style="padding:10px 8px;"></th>
                 </tr>
             </thead>
-            <tbody id="table-body">
-
-            </tbody>
+            <tbody id="table-body"></tbody>
         </table>
-    </div>
-    <div>
-        <input type="text" placeholder="id" id="id_txt" />
-        <input type="text" placeholder="title" id="title_txt" />
-        <input type="text" placeholder="views" id="views_txt" />
-        <input type="submit" value="Save" onclick="Save()">
+        <form onsubmit="event.preventDefault();Save();" style="display:flex; gap:12px; justify-content:center; align-items:center; flex-wrap:wrap;">
+            <input type="text" placeholder="ID " id="id_txt" style="padding:8px 12px; border-radius:8px; border:1px solid #bbb; min-width:120px;" />
+            <input type="text" placeholder="title id="title_txt" style="padding:8px 12px; border-radius:8px; border:1px solid #bbb; min-width:180px;" />
+            <input type="text" placeholder="Lượt xem" id="views_txt" style="padding:8px 12px; border-radius:8px; border:1px solid #bbb; min-width:120px;" />
+            <input type="submit" value="Lưu" style="padding:8px 20px; border-radius:8px; background:#232323; color:#fff; border:none; font-weight:600; cursor:pointer; transition:background 0.2s;" />
+        </form>
     </div>
 
-    <div>
-        <h3>Comments</h3>
-        <table>
-            <thead>
+    <div style="max-width: 700px; margin: 32px auto 32px auto; background: #fff; border-radius: 16px; box-shadow: 0 2px 16px rgba(0,0,0,0.08); padding: 32px;">
+        <h2 style="text-align:center; margin-bottom: 24px; color: #1a1a1a;">Quản lý Bình luận</h2>
+        <table style="width:100%; border-collapse:collapse; margin-bottom: 24px;">
+            <thead style="background:#232323; color:#fff;">
                 <tr>
-                    <th>id</th>
-                    <th>text</th>
-                    <th>postId</th>
+                    <th style="padding:10px 8px;">ID</th>
+                    <th style="padding:10px 8px;">Content</th>
+                    <th style="padding:10px 8px;">Post ID</th>
+                    <th style="padding:10px 8px;"></th>
                 </tr>
             </thead>
-            <tbody id="comment-body">
-            </tbody>
+            <tbody id="comment-body"></tbody>
         </table>
-    </div>
-    <div>
-        <input type="text" placeholder="id" id="cmt_id_txt" />
-        <input type="text" placeholder="text" id="cmt_text_txt" />
-        <input type="text" placeholder="postId" id="cmt_postid_txt" />
-        <input type="submit" value="Save Comment" onclick="SaveComment()">
+        <form onsubmit="event.preventDefault();SaveComment();" style="display:flex; gap:12px; justify-content:center; align-items:center; flex-wrap:wrap;">
+            <input type="text" placeholder="ID" id="cmt_id_txt" style="padding:8px 12px; border-radius:8px; border:1px solid #bbb; min-width:120px;" />
+            <input type="text" placeholder="title" id="cmt_text_txt" style="padding:8px 12px; border-radius:8px; border:1px solid #bbb; min-width:180px;" />
+            <input type="text" placeholder="Post ID" id="cmt_postid_txt" style="padding:8px 12px; border-radius:8px; border:1px solid #bbb; min-width:120px;" />
+            <input type="submit" value="Lưu bình luận" style="padding:8px 20px; border-radius:8px; background:#232323; color:#fff; border:none; font-weight:600; cursor:pointer; transition:background 0.2s;" />
+        </form>
     </div>
 </body>
 
